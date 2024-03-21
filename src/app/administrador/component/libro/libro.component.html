@@ -1,0 +1,43 @@
+
+
+<div class="position-relative" *ngIf="libro.disponibilidad!='no disponible'" >
+    <div class="card mt-4">
+      <div class="container card-body">
+        <img [src]="libro.poster" class="img-fluid img" [alt]="libro.titulo">
+        <h5 class="card-title">Titulo: {{ libro.titulo| titlecase }}</h5>
+        <h5 class="card-text text-secondary mt-3">disponibilidad: {{ libro.disponibilidad| titlecase }}</h5>
+
+        <p class="card-text mt-3 mb-3 text-secondary">{{ libro.descripcion }}</p>
+        <p class="card-text mt-3 mb-3 text-secondary">{{ libro.categoria }}</p>
+
+        <div class="d-flex  ">
+          <div class="w-100 ">
+            <p class="text-secondary">Author: {{ libro.autor }}</p>
+          </div>
+          <div class="flex-grow-1" style="width: 200px;">
+            <p class="text-secondary "   >{{libro.disponibilidad  }}</p>
+          </div>
+  
+        </div>
+        <div class="position-absolute opciones"  >
+            <svg 
+            [routerLink]="['/administrador/update/',libro.id]"
+            class="edit"
+            width="32"
+            height="36"
+            viewBox="0 0 37 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+         
+  
+            <path
+              d="M9.90836 26.5917C9.97826 26.5917 10.0482 26.5849 10.1181 26.5746L15.9969 25.5663C16.0668 25.5527 16.1332 25.5219 16.1822 25.4706L30.9981 10.9819C31.0305 10.9503 31.0562 10.9127 31.0738 10.8713C31.0913 10.83 31.1003 10.7857 31.1003 10.7409C31.1003 10.6961 31.0913 10.6518 31.0738 10.6105C31.0562 10.5691 31.0305 10.5316 30.9981 10.4999L25.1892 4.81586C25.1228 4.75092 25.0354 4.71674 24.941 4.71674C24.8466 4.71674 24.7593 4.75092 24.6929 4.81586L9.8769 19.3046C9.82447 19.3559 9.79302 19.4174 9.77904 19.4858L8.74797 25.2348C8.71397 25.4179 8.72611 25.6064 8.78336 25.7838C8.84061 25.9613 8.94123 26.1225 9.07651 26.2534C9.30719 26.4721 9.59729 26.5917 9.90836 26.5917ZM12.2641 20.6308L24.941 8.23724L27.503 10.7426L14.826 23.1362L11.7188 23.6728L12.2641 20.6308ZM31.6587 29.4628H5.93437C5.31572 29.4628 4.81592 29.9516 4.81592 30.5566V31.787C4.81592 31.9374 4.94174 32.0605 5.09553 32.0605H32.4975C32.6513 32.0605 32.7772 31.9374 32.7772 31.787V30.5566C32.7772 29.9516 32.2773 29.4628 31.6587 29.4628Z"
+              fill="#AAAAAA"
+            />
+          </svg>
+          </div>
+      </div>
+    </div>
+  </div>
+  

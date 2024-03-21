@@ -1,0 +1,23 @@
+<nav class="navbar ">
+    <div class=" container-fluid mx-5">
+        <div class="d-flex flex-column ">
+            <a class="navbar-brand fw-bold" routerLink="blog">Libreria</a>
+<p class="text-secondary my-2">Blog de entrada de IUB</p>
+        </div>
+        <div class="d-flex flex-row">  
+            <form class="d-flex position-relative" role="search">
+                <i class="bi bi-search fs-4 icon-color input-icon" ></i>
+                <input class="form-control me-5 px-5 py-3 " (input)="onChange($event)" type="search" placeholder="Buscar Entrada" aria-label="Search">
+                
+              </form>
+              <button class="btn btn-primary text-white" routerLink="/usuario/list">Cliente</button>
+              <button class="btn btn-primary text-white" routerLink="/administrador/list">Administrador</button>
+
+              <button routerLink="/administrador/create" class="'btn text-white btn-primary px-2'"  (click)="crear($event)">Nueva entrada</button>
+           
+
+            </div>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>

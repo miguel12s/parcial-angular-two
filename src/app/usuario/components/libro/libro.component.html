@@ -1,0 +1,26 @@
+
+
+<div class="position-relative libro" [routerLink]="['/usuario/details/',libro.id]" *ngIf="libro.disponibilidad!='no disponible'"  >
+    <div class="card mt-4">
+      <div class="container card-body">
+        <img [src]="libro.poster" class="img-fluid img" [alt]="libro.titulo">
+        <h5 class="card-title">Titulo: {{ libro.titulo| titlecase }}</h5>
+        <h5 class="card-text text-secondary mt-3">disponibilidad: {{ libro.disponibilidad| titlecase }}</h5>
+
+        <p class="card-text mt-3 mb-3 text-secondary">{{ libro.descripcion }}</p>
+        <p class="card-text mt-3 mb-3 text-secondary">{{ libro.categoria }}</p>
+
+        <div class="d-flex  ">
+          <div class="w-100 ">
+            <p class="text-secondary">Author: {{ libro.autor }}</p>
+          </div>
+          <div class="flex-grow-1" style="width: 200px;">
+            <p class="text-secondary "   >{{libro.disponibilidad  }}</p>
+          </div>
+  
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  

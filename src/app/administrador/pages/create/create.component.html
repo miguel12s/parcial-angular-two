@@ -1,0 +1,59 @@
+<div class="container" >
+    <form [formGroup]="crearBlog" (ngSubmit)="onSubmit()" class="mt-4">
+      <app-paragraph [style]="'text-center fw-bold'" [value]="'Crear libro'"></app-paragraph>
+      <div class="mb-3">
+        <app-input [label]="'Titulo'" [placeholder]="'Titulo de entrada'" [control]="crearBlog.controls['titulo']" />
+  
+        <app-alert *ngIf="this.crearBlog.get('titulo')?.errors?.['required']"
+          [message]="'El titulo de la entrada no puede estar vacio'" [type]="'danger'"></app-alert>
+        <app-alert *ngIf="this.crearBlog.get('titulo')?.errors?.['minlength']" [message]="
+            'El titulo de la entrada debe tener un minimo de caracteres de 5'
+          " [type]="'danger'"></app-alert>
+  
+        <!--  -->
+      </div>
+      <div class="mb-3">
+        <app-input [label]="'Descripcion'" [placeholder]="'Descripcion de la entrada'"
+          [control]="crearBlog.controls['descripcion']" />
+        <app-alert *ngIf="this.crearBlog.get('descripcion')?.errors?.['required']"
+          [message]="'La descripcion de la entrada no puede estar vacio'" [type]="'danger'"></app-alert>
+        <app-alert *ngIf="this.crearBlog.get('descripcion')?.errors?.['minlength']" [message]="
+            'La descripcion de la entrada debe tener un minimo de caracteres de 20'
+          " [type]="'danger'"></app-alert>
+      </div>
+      <div class="mb-3">
+        <app-input [label]="'Categoria'" [type]="'text'" [control]="crearBlog.get('categoria')" />
+        <app-alert *ngIf="this.crearBlog.get('categoria')?.errors?.['required']"
+          [message]="'El campo de fecha  no debe estar vacio'" [type]="'danger'"></app-alert>
+      </div>
+      <div class="mb-3">
+        <app-input [label]="'Autor'" [placeholder]="'Nombre del autor'" [control]="crearBlog.get('autor')" />
+        <app-alert *ngIf="this.crearBlog.get('autor')?.errors?.['required']"
+          [message]="'El autor de la entrada no puede estar vacio'" [type]="'danger'"></app-alert>
+        <app-alert *ngIf="this.crearBlog.get('autor')?.errors?.['minlength']" [message]="
+            'El autor de la entrada debe tener un minimo de caracteres de 10'
+          " [type]="'danger'"></app-alert>
+      </div>
+      <div class="mb-3">
+        <app-input [label]="'Disponibilidad'" [placeholder]="'Disponibilidad'" [control]="crearBlog.get('disponibilidad')" />
+        <app-alert *ngIf="this.crearBlog.get('disponibilidad')?.errors?.['required']"
+          [message]="'El autor de la entrada no puede estar vacio'" [type]="'danger'"></app-alert>
+        <app-alert *ngIf="this.crearBlog.get('disponibilidad')?.errors?.['minlength']" [message]="
+            'El autor de la entrada debe tener un minimo de caracteres de 10'
+          " [type]="'danger'"></app-alert>
+      </div>
+      <div class="mb-3">
+        <app-input [label]="'Poster'" [placeholder]="'Poster'" [control]="crearBlog.get('poster')" />
+        <app-alert *ngIf="this.crearBlog.get('poster')?.errors?.['required']"
+          [message]="'El autor de la entrada no puede estar vacio'" [type]="'danger'"></app-alert>
+        <app-alert *ngIf="this.crearBlog.get('poster')?.errors?.['minlength']" [message]="
+            'El autor de la entrada debe tener un minimo de caracteres de 10'
+          " [type]="'danger'"></app-alert>
+      </div>
+  
+      <div class="d-flex justify-content-center">
+        <app-button [class]="'btn btn-primary'" [type]="'submit'" [value]="'Guardar'"
+          [disabled]="this.crearBlog.invalid"></app-button>
+      </div>
+    </form>
+  </div>

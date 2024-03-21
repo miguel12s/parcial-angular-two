@@ -1,0 +1,12 @@
+<div class="container-fluid px-5">
+    <div class="row mb-4"> 
+        <div *ngIf="word=='' || word!==''">
+    
+        <div *ngFor="let libro of libros|filter:word">
+        <app-libro   [libro]="libro" class="col-12" ></app-libro>
+        
+    </div>
+    </div>
+    </div>
+    </div>
+    
