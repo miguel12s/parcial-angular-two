@@ -33,6 +33,7 @@ export class CreateComponent {
   }   
   onSubmit() {
   const blog:Libro=this.crearBlog.value
+  console.log('blog',blog);
   
   this.service.crearBlog(blog)
   this.router.navigate(['/administrador/list'])
