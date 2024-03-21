@@ -23,4 +23,8 @@ export class ListComponent {
     this.libros = this.service.libro;
 
   }
+  onChange(event: any) {
+    const palabra = event.target.value;
+    this.service.getlibrosForSearch(palabra)
+  }
 }

@@ -10,34 +10,7 @@ export class LibroService {
   constructor() { }
   public $search=new BehaviorSubject<string>('')
   private libros: Libro[] = [
-    {
-      id: 1,
-      titulo: 'aprendiendo a programar',
-      descripcion: 'segundo dia aprendiendo',
-      autor: 'miguel',
-      poster:'https://static.vecteezy.com/system/resources/previews/009/871/916/non_2x/three-books-and-one-open-cartoon-illustration-vector.jpg',
-      categoria:'ficcion',
-      disponibilidad: 'recibido',
-    },
-    {
-      id: 2,
-      titulo: 'aprendiendo a programar con personas',
-      descripcion: 'tercer dia aprendiendo',
-      autor: 'miguel suarez',
-      poster:'https://static.vecteezy.com/system/resources/previews/009/871/916/non_2x/three-books-and-one-open-cartoon-illustration-vector.jpg',
-      categoria:'ciencia',
-      disponibilidad: 'servicios'
-    },
    
-    {
-      id: 3,
-      titulo: 'aprendiendo a programar con discapacitados',
-      descripcion: 'cuarto dia aprendiendo',
-      autor: 'miguel suarez',
-      poster:'https://static.vecteezy.com/system/resources/previews/009/871/916/non_2x/three-books-and-one-open-cartoon-illustration-vector.jpg',
-      categoria:'programacion',
-      disponibilidad: 'entregado'
-    },
    
   ];
 

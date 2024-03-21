@@ -1,3 +1,16 @@
+<div class="d-flex justify-content-center">
+    <form class="d-flex position-relative" role="search" >
+        <i class="bi bi-search fs-4 icon-color input-icon" ></i>
+        <input class="form-control me-5 px-5 py-3 " (input)="onChange($event)" type="search" placeholder="Buscar Entrada" aria-label="Search">
+        
+      </form>
+      <button routerLink="/administrador/create" class="'btn text-white btn-primary button-create'" >
+    Nuevo libro
+      </button>
+
+    </div>
+
+
 <div class="container-fluid px-5">
     <div class="row mb-4"> 
         <div *ngIf="word=='' || word!==''">

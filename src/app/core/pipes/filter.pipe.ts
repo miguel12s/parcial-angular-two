@@ -14,8 +14,10 @@ export class FilterPipe implements PipeTransform {
         const user:Libro[]=libros.filter(
           (Libro:Libro)=>
             
-            Libro.titulo.toLowerCase().includes(word.toLowerCase())
-          
+            Libro.titulo.toLowerCase().includes(word.toLowerCase()) ||
+             Libro.descripcion.toLowerCase().includes(word.toLowerCase())||
+             Libro.autor.toLowerCase().includes(word.toLowerCase())
+            
         )
         console.log(user);
         return user

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { Libro } from '../../../core/interfaces/libro';
 import { LibroService } from '../../../core/services/libro.service';
 import { tap } from 'rxjs';
@@ -9,6 +9,8 @@ import { tap } from 'rxjs';
   styleUrl: './list.component.scss'
 })
 export class ListComponent {
+  @Output() wordSearch: EventEmitter<string> = new EventEmitter<string>();
+
   public libros: Libro[] = [];
   private service = inject(LibroService);
   public $search=this.service.searchObservable
@@ -22,5 +24,11 @@ export class ListComponent {
     ).subscribe()
     this.libros = this.service.libro;
 
+  }
+
+  onChange(event: any) {
+    const palabra = event.target.value;
+    this.service.getlibrosForSearch(palabra)
+    this.wordSearch.emit(palabra)
   }
 }

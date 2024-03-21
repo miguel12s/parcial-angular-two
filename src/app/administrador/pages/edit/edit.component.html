@@ -22,7 +22,7 @@
           " [type]="'danger'"></app-alert>
       </div>
       <div class="mb-3">
-        <app-input [label]="'Categoria'" [type]="'text'" [control]="crearBlog.get('categoria')" />
+        <app-input [label]="'Categoria'" [type]="'text'" [placeholder]="'Categoria'" [control]="crearBlog.get('categoria')" />
         <app-alert *ngIf="this.crearBlog.get('categoria')?.errors?.['required']"
           [message]="'El campo de fecha  no debe estar vacio'" [type]="'danger'"></app-alert>
       </div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { LibroService } from '../../../core/services/libro.service';
 
 @Component({
   selector: 'app-container',
