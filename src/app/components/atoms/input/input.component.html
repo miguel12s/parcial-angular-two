@@ -1,0 +1,4 @@
+<div *ngIf="control !== null && isFormControl(control)">
+  <label for="exampleInputEmail1" class="form-label fw-bold">{{ label }}</label>
+  <input [type]="type" class="form-control" [formControl]="control" name="title" id="title" [value]="value" [placeholder]="placeholder">
+</div>
